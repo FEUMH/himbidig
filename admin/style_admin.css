@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #ffffff; /* White background */
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+input, button, textarea {
+    background-color: white;
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+input:focus, button:focus, textarea:focus {
+    outline: none;
+    border-color: #0056b3; /* Darker blue on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea {
+    resize: vertical;
+    height: 150px;
+    padding: 12px;
+}
+
+button {
+    background-color: #007bff; /* Primary blue button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    input, button, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    input, button, textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+
+
+/*
+admin*/
+
+.admin-dashboard {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headings */
+h1, h3 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+/* Container for text and buttons */
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #333; /* Light gray line under each item */
+}
+
+.item-text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.item-buttons {
+    text-align: right;
+}
+
+/* Add, Edit, and Delete Buttons */
+.add-btn, .edit-btn, .delete-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.edit-btn {
+    background-color: #28a745; /* Green for Edit */
+    color: #ffffff;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red for Delete */
+    color: #ffffff;
+}
+
+/* Hover Effects */
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Section Borders */
+.admin-section {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-dashboard {
+        width: 95%;
+    }
+
+    .admin-item {
+        flex-direction: column;
+        align-items: space-between;
+    }
+
+    .item-buttons {
+        text-align: left;
+        margin-top: 10px;
+    }
+}

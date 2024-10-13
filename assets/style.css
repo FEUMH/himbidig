@@ -1,0 +1,279 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+}
+
+/* Main Container */
+.container {
+    gap:20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Sidebar Section for Latest Events */
+.sidebar-section {
+    flex: 0 0 25%; /* Make the sidebar 25% of the width */
+    background-color: #ffffff;
+    padding: 20px;
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Event List */
+.event-list .event-item {
+    margin-bottom: 0px;
+}
+
+/* View More Link */
+.view-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Gallery Section */
+.gallery-section {
+    flex: 1; /* The gallery takes up the remaining space */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Behavior for Sidebar, Gallery, and Event List */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically on tablet */
+    }
+
+    .sidebar-section {
+        flex: 1 1 100%; /* Full width for sidebar */
+        margin-bottom: 20px;
+    }
+
+    .gallery-section {
+        flex: 1 1 100%; /* Full width for gallery */
+        margin-bottom: 20px;
+    }
+
+    .gallery-item {
+        flex: 1 1 45%; /* 2 images per row on smaller screens */
+    }
+
+    .event-item {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row on smaller screens */
+    }
+
+    .view-more {
+        font-size: 14px; /* Smaller button text on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%; /* Full width for gallery items on small screens */
+    }
+
+    .event-item {
+        flex: 1 1 100%; /* Full width for event items on small screens */
+    }
+
+    .view-more {
+        padding: 8px 12px; /* Smaller padding on small screens */
+        font-size: 12px;
+    }
+}
+
+/* Event List Styling */
+.event-list {
+    display: flex;
+    flex-direction: column; /* Stack events vertically */
+    gap: 20px; /* Space between items */
+    align-items: center; /* Center items horizontally */
+}
+
+.event-item {
+    display: flex; /* Flexbox for side-by-side layout */
+    gap: 20px; /* Space between image and text */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    align-items: center;
+    flex-direction: row; /* Default side-by-side layout */
+}
+
+/* Responsive Behavior for Event Section */
+@media (max-width: 768px) {
+    .event-item {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        gap: 10px; /* Reduce gap between image and text */
+    }
+
+    .event-image {
+        width: 100%; /* Make the image take full width */
+        max-width: 250px; /* Maintain a maximum width */
+    }
+}
+
+/* Event Image Styling */
+.event-image {
+    flex: 0 0 auto; /* Prevent image from growing */
+    width: 250px; /* Fixed width for the image */
+}
+
+.event-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on image */
+}
+
+.event-details {
+    flex: 1; /* Take up remaining space */
+}
+
+.event-details h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Show More/Show Less Button */
+.show-more {
+    padding: 10px 15px;
+    background-color: #007bff; /* Primary blue color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.show-more:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Gallery Styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between images */
+    justify-content: space-between; /* Distribute evenly */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 20px); /* 3 images per row, accounting for gap */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; /* Keep aspect ratio */
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px); /* 2 images per row on tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%; /* 1 image per row on mobile */
+    }
+}
+
+/* About Section Styling */
+.about-section {
+    background-color: #f8f9fa; /* Light background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure full width for small screens */
+}
+
+.about-section h1 {
+    color: #007bff; /* Blue heading */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.about-section p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 30px;
+    }
+
+    .about-section h1 {
+        font-size: 2em;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 20px;
+    }
+
+    .about-section h1 {
+        font-size: 1.8em;
+    }
+
+    .about-section p {
+        font-size: 14px;
+    }
+}
